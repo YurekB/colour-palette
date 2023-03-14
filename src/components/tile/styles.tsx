@@ -26,8 +26,49 @@ width: calc(20vw - 2px);
 border: 1px solid black;
 height: calc(25vh)
 
-
   }
+`;
+
+const cardAnimationTablet = keyframes`
+0%{
+width: 0px;
+border: 0px;
+height: calc(25vh + 2px)
+}
+1%{
+border: 1px solid black;
+height: calc(25vh)
+
+
+}
+
+100%{
+width: calc(25vw - 2px);
+border: 1px solid black;
+height: calc(25vh)
+
+}
+`;
+
+const cardAnimationMobile = keyframes`
+0%{
+width: 0px;
+border: 0px;
+height: calc(25vh + 2px)
+}
+1%{
+border: 1px solid black;
+height: calc(25vh)
+
+
+}
+
+100%{
+width: calc(33.32vw - 2px);
+border: 1px solid black;
+height: calc(25vh)
+
+}
 `;
 
 export const TileContainer = styled.div<props>`
@@ -39,6 +80,12 @@ export const TileContainer = styled.div<props>`
     `rgb(${red}, ${green}, ${blue})`};
 
   animation-name: ${cardAnimation};
+  @media (max-width: 700px) {
+    animation-name: ${cardAnimationTablet};
+  }
+  @media (max-width: 400px) {
+    animation-name: ${cardAnimationMobile};
+  }
   animation-duration: 0.3s;
   animation-delay: ${({ timing }) => `${timing}s`};
   animation-fill-mode: forwards;
@@ -63,5 +110,9 @@ export const TileContainer = styled.div<props>`
     background-color: #f4f3f364;
     padding: 5px 10px;
     border-radius: 10px;
+    @media (max-width: 550px) {
+      padding: 5px 3px;
+      font-size: 12px;
+    }
   }
 `;
