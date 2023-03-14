@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import Tile from "../../components/tile";
-import { LandingPageContainer, RefreshButton, TileContainer } from "./styles";
+import {
+  InfoButton,
+  InfoSection,
+  LandingPageContainer,
+  RefreshButton,
+  TileContainer,
+} from "./styles";
+import info from "../../assets/info.svg";
 
 const LandingPage = () => {
   const [displayArea, setDisplayArea] = useState<any>([]);
   const [mounted, setMounted] = useState(false);
   const [index, setIndex] = useState(0);
+  const [infoOpen, setInfoOpen] = useState(false);
 
   let i = 0;
 
@@ -70,7 +78,14 @@ const LandingPage = () => {
           return tile;
         })}
       </TileContainer>
-
+      <InfoButton
+        src={info}
+        onMouseEnter={() => setInfoOpen(true)}
+        onMouseLeave={() => setInfoOpen(false)}
+      />
+      <InfoSection info={infoOpen.toString()}>
+        <p>Press on a colour to make the rgb values toggle on and off</p>
+      </InfoSection>
       <RefreshButton onClick={() => window.location.reload()}>
         Refresh
       </RefreshButton>
