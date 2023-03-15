@@ -21,6 +21,10 @@ const Tile = ({ red, blue, green, timing }: props) => {
     }
   };
 
+  const clickFunc = () => {
+    setClicked(!clicked);
+  };
+
   return (
     <TileContainer
       red={red}
@@ -29,7 +33,7 @@ const Tile = ({ red, blue, green, timing }: props) => {
       timing={timing}
       onMouseEnter={() => setDisplay(true)}
       onMouseLeave={onMouseLeave}
-      onClick={() => setClicked(!clicked)}
+      onClick={clickFunc}
       display={display.toString()}
     >
       <p>{`rgb ( ${red}, ${green}, ${blue} )`}</p>
