@@ -1,8 +1,16 @@
 import { RefreshButton } from "./styles";
 
-const RefreshBtn = () => {
+interface props {
+  setDisplayArea: any;
+}
+
+const RefreshBtn = ({ setDisplayArea }: props) => {
   return (
-    <RefreshButton onClick={() => window.location.reload()}>
+    <RefreshButton
+      onClick={() => {
+        setDisplayArea([]);
+      }}
+    >
       <p>Refresh</p>
     </RefreshButton>
   );

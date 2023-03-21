@@ -10,4 +10,5 @@ export const TileContainer = styled.div`
   position: absolute;
   display: flex;
   flex-wrap: wrap;
+  z-index: 1;
 `;

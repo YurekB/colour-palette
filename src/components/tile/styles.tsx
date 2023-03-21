@@ -10,23 +10,21 @@ interface props {
 
 const cardAnimation = keyframes`
   0%{
-width: 0px;
-border: 0px;
-height: calc(25vh + 2px)
-  }
+     width: 0px;
+     border: 0px;
+     height: calc(25vh + 2px)
+   }
+
   1%{
-border: 1px solid black;
-height: calc(25vh)
-
-
-  }
+     border: 1px solid black;
+     height: calc(25vh)
+   }
 
   100%{
-width: calc(20vw - 2px);
-border: 1px solid black;
-height: calc(25vh)
-
-  }
+     width: calc(20vw - 2px);
+     border: 1px solid black;
+     height: calc(25vh)
+   }
 `;
 
 const cardAnimationTablet = keyframes`
@@ -38,15 +36,12 @@ height: calc(25vh + 2px)
 1%{
 border: 1px solid black;
 height: calc(25vh)
-
-
 }
 
 100%{
 width: calc(25vw - 2px);
 border: 1px solid black;
 height: calc(25vh)
-
 }
 `;
 
@@ -59,15 +54,12 @@ height: calc(25vh + 2px)
 1%{
 border: 1px solid black;
 height: calc(25vh)
-
-
 }
 
 100%{
 width: calc(33.32vw - 2px);
 border: 1px solid black;
 height: calc(25vh)
-
 }
 `;
 
@@ -89,7 +81,7 @@ export const TileContainer = styled.div<props>`
   animation-duration: 0.3s;
   animation-delay: ${({ timing }) => `${timing}s`};
   animation-fill-mode: forwards;
-
+  z-index: 2;
   :hover {
     cursor: pointer;
     z-index: 2;
@@ -100,7 +92,6 @@ export const TileContainer = styled.div<props>`
 
   p {
     opacity: ${({ display }) => display === "false" && "0%"};
-
     transition: 0.1s linear;
     position: absolute;
     top: 50%;

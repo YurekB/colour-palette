@@ -3,6 +3,7 @@ import Tile from "../../components/tile";
 import { LandingPageContainer, TileContainer } from "./styles";
 import RefreshBtn from "../../components/refreshButton";
 import InfoSection from "../../components/info";
+import BackgroundGrid from "../../components/backgroundGrid";
 
 const LandingPage = () => {
   const [displayArea, setDisplayArea] = useState<any>([]);
@@ -18,11 +19,9 @@ const LandingPage = () => {
 
     displayArea.push(
       <Tile
-        red={red}
-        green={green}
-        blue={blue}
         timing={i - i * 0.5}
         key={Math.random()}
+        rgbObj={{ red, green, blue }}
       />
     );
 
@@ -41,7 +40,9 @@ const LandingPage = () => {
     }
 
     setMounted(true);
-  }, [mounted]);
+  }, [mounted, displayArea]);
+
+  //Background grid commented out. Not sure if I like it or not
 
   return (
     <LandingPageContainer>
@@ -49,9 +50,10 @@ const LandingPage = () => {
         {displayArea.map((tile: any) => {
           return tile;
         })}
+        {/* <BackgroundGrid /> */}
       </TileContainer>
       <InfoSection />
-      <RefreshBtn />
+      <RefreshBtn setDisplayArea={setDisplayArea} />
     </LandingPageContainer>
   );
 };

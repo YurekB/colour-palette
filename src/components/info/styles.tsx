@@ -4,14 +4,8 @@ export const InfoButton = styled.img`
   position: absolute;
   top: 20px;
   left: 20px;
-  z-index: 99;
+  z-index: 5;
   transform: scale(1.5);
-
-  filter: grayscale(98%) sepia(16%) brightness(130%) saturate(0%) contrast(153%);
-  -webkit-filter: grayscale(98%) sepia(16%) brightness(130%) saturate(0%)
-    contrast(153%);
-  -moz-filter: grayscale(98%) sepia(16%) brightness(130%) saturate(0%)
-    contrast(153%);
 `;
 
 interface props {
@@ -21,11 +15,11 @@ interface props {
 export const Info = styled.div<props>`
   display: ${({ info }) => info === "false" && "none"};
   position: absolute;
-  z-index: 99;
+  z-index: 5;
   top: 60px;
   left: 20px;
   width: 150px;
-  background-color: rgb(167, 167, 167);
+  background-color: rgb(243, 243, 243);
   padding: 10px;
   border-radius: 10px;
 `;
