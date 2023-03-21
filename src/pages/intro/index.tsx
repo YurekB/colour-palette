@@ -13,6 +13,7 @@ const IntroPage = ({ setIntroComplete }: props) => {
       </div>
       <SubHeader>The random colour grid generator</SubHeader>
       <Button onClick={() => setIntroComplete(true)}>Generate</Button>
+      <p>Created by Jerzy Bogucki</p>
     </IntroPageContainer>
   );
 };

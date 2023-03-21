@@ -15,6 +15,12 @@ export const IntroPageContainer = styled.div`
     display: flex;
     margin-bottom: 10px;
   }
+
+  p {
+    margin-top: 20px;
+    opacity: 0%;
+    animation: ${buttonAni} 0.5s linear 2.5s 1 forwards;
+  }
 `;
 
 interface props {
@@ -37,7 +43,7 @@ export const SubHeader = styled.h2`
 `;
 
 export const Button = styled.button`
-  margin-top: 100px;
+  margin-top: 80px;
   width: 300px;
   height: 50px;
   border-radius: 10px;
@@ -47,7 +53,7 @@ export const Button = styled.button`
   transition: 0.2s linear;
   pointer-events: none;
   :hover {
-    margin-top: 95px;
+    margin-top: 75px;
     margin-bottom: 5px;
     cursor: pointer;
     background-color: #e9e9e9;
