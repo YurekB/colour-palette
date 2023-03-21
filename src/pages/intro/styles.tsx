@@ -28,18 +28,33 @@ interface props {
 }
 
 export const Logo = styled.h1<props>`
-  margin: 0 15px;
-  font-size: 80px;
   animation-name: ${({ direction }) =>
     (direction === "left" && leftAni) || (direction === "right" && rightAni)};
   animation-duration: 0.7s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+
+  font-size: 80px;
+  margin: 0 15px;
+  @media (max-width: 600px) {
+    font-size: 50px;
+    margin: 0 10px;
+  }
+  @media (max-width: 350px) {
+    font-size: 30px;
+    margin: 0 5px;
+  }
 `;
 
 export const SubHeader = styled.h2`
   animation: ${slideUp} 0.7s ease-out 1.25s 1 forwards;
   opacity: 0%;
+  @media (max-width: 600px) {
+    font-size: 22px;
+  }
+  @media (max-width: 350px) {
+    font-size: 14px;
+  }
 `;
 
 export const Button = styled.button`
@@ -52,6 +67,7 @@ export const Button = styled.button`
   animation: ${buttonAni} 0.5s linear 2.5s 1 forwards;
   transition: 0.2s linear;
   pointer-events: none;
+  max-width: 95vw;
   :hover {
     margin-top: 75px;
     margin-bottom: 5px;
